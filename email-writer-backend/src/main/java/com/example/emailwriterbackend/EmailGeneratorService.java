@@ -1,4 +1,4 @@
-package com.example.emailwriter;
+package com.example.emailwriterbackend;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -67,8 +67,9 @@ public class EmailGeneratorService {
         StringBuilder prompt = new StringBuilder();
         prompt.append("Generate a professional email reply for the following email content. Please don't generate a subject line ");
         if(emailRequest.getTone()!=null && !emailRequest.getTone().isEmpty())
-                prompt.append("Use a ").append(emailRequest.getTone()).append(" tone.");
+            prompt.append("Use a ").append(emailRequest.getTone()).append(" tone.");
         prompt.append("\n Original emaill : \n").append(emailRequest.getEmailContent());
         return prompt.toString();
     }
 }
+

@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail AI Reply Assistant",
+  "version": "1.0",
+  "description": "AI-powered email reply generator with customizable tones",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["http://localhost:8090/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}
